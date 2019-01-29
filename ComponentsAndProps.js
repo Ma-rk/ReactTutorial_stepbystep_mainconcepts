@@ -2,11 +2,17 @@ function formatDate(date) {
     return date.toLocaleDateString();
 }
 
+function Avatar(props) {
+    return (
+        <img className='Avatar' src={props.user.url} alt={props.user.name} />
+    );
+}
+
 function Comment(props) {
     return (
         <div>
             <div>
-                <img src={props.user.url} alt={props.user.name} />
+                <Avatar user={props.user} />
                 <div>
                     {props.user.name}
                 </div>
