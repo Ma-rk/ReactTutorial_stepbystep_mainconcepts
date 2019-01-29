@@ -3,13 +3,15 @@ function formatName(user) {
 }
 
 const user = { firstName: 'Mark', lastName: 'Kim' };
-const element = (
-    <div>
-        <h1>hello, {formatName(user)}</h1>
-        <h2>welcome</h2>
-    </div>);
 
-ReactDOM.render(
-    element,
-    document.getElementById('root')
-);
+function tick() {
+    const element = (
+        <div>
+            <h1>hello, {formatName(user)}</h1>
+            <h2>It is {new Date().toLocaleTimeString()}</h2>
+        </div>
+    );
+    ReactDOM.render(element, document.getElementById('root'));
+}
+
+setInterval(tick, 1000);
