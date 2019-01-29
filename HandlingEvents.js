@@ -22,7 +22,30 @@ class Toggle extends React.Component {
     }
 }
 
+class LoggingButton1 extends React.Component {
+    handleClick1 = () => {
+        console.log('this is: ', this);
+    }
+
+    render() {
+        return (
+            <button onClick={this.handleClick1}>
+                click me 1
+            </button>
+        );
+    }
+}
+
+function App() {
+    return (
+        <div>
+            <Toggle />
+            <LoggingButton1 />
+        </div>
+    );
+}
+
 ReactDOM.render(
-    <Toggle />,
+    <App />,
     document.getElementById('root')
 );
