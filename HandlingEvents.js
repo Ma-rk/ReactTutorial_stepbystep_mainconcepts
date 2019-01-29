@@ -36,11 +36,26 @@ class LoggingButton1 extends React.Component {
     }
 }
 
+class LoggingButton2 extends React.Component {
+    handleClick2() {
+        console.log('this is: ', this);
+    }
+
+    render() {
+        return (
+            <button onClick={(e) => this.handleClick2(e)}>
+                click me 2
+            </button>
+        );
+    }
+}
+
 function App() {
     return (
         <div>
             <Toggle />
             <LoggingButton1 />
+            <LoggingButton2 />
         </div>
     );
 }
