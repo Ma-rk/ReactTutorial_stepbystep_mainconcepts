@@ -90,3 +90,21 @@ ReactDOM.render(
     <LoginControl />,
     document.getElementById('root')
 );
+
+function Mailbox(props) {
+    const unreadMsg = props.unreadMsg;
+    return (
+        <div>
+            <h1>Hello!!</h1>
+            {unreadMsg.length > 0 &&
+                <h2>You have {unreadMsg.length} unread msg.</h2>
+            }
+        </div>
+    );
+}
+
+const msg = ['React', 'Re: React', 'Re:Re: React'];
+ReactDOM.render(
+    <Mailbox unreadMsg={msg} />,
+    document.getElementById('root')
+);
